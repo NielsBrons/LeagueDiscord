@@ -26,6 +26,7 @@ if __name__ == '__main__':
             await ctx.send(f'DEBUG: {e}')
         
         return result
+    
 
     async def get_stats(ctx, name):
         request_url = f"https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{name}?api_key={RIOT_TOKEN}"
@@ -67,6 +68,10 @@ if __name__ == '__main__':
     @client.command()
     async def dung(ctx):
         await get_stats(ctx, name='Feederal Agent')
+
+    @client.command()
+    async def shappo0(ctx):
+        await get_stats(ctx, name='shappo0')
         
     @client.event
     async def on_message(message):
