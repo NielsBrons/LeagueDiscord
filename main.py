@@ -70,7 +70,7 @@ if __name__ == '__main__':
         await get_stats(ctx, name='Feederal Agent')
 
     @client.command()
-    async def shappo0(ctx):
+    async def jasper(ctx):
         await get_stats(ctx, name='shappo0')
         
     @client.event
