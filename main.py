@@ -27,7 +27,6 @@ if __name__ == '__main__':
         
         return result
     
-
     async def get_stats(ctx, name):
         request_url = f"https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{name}?api_key={RIOT_TOKEN}"
 
@@ -53,7 +52,7 @@ if __name__ == '__main__':
         for x in data:
             if x['queueType'] == "RANKED_SOLO_5x5":
 
-                await ctx.send(f"{name}: {x['tier']} {x['rank']}. Wins: {x['wins']} Losses: {x['losses']}. Win rate: {int(x['wins'] / (x['wins'] + x['losses']) * 100 )}%")
+                await ctx.send(f"{name}: {x['tier']} {x['rank']} {x['leaguePoints']} LP. Wins: {x['wins']} Losses: {x['losses']}. Win rate: {int(x['wins'] / (x['wins'] + x['losses']) * 100 )}%")
 
     @client.command()
     async def lol(ctx, *, arg):
